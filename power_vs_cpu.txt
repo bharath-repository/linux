@@ -1,0 +1,10 @@
+1]apt-get install cpufrequtils lm-sensors
+2]sudo sensors-detect
+3]watch grep \"cpu MHz\" /proc/cpuinfo
+4]sudo cpufreq-set -r -g performance
+5]sudo cpufreq-set -r -g powersave
+
+
+tlp-stat
+cpufrequtils
+powertop
