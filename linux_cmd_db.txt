@@ -288,13 +288,18 @@ rpm
 
 
 gcc
+nano
+gedit
+vim
 nvm
-node
+npm
+nodejs
 java
 python3.8
 pip3
 mongo
 mysql
+postgresql
 git
 
 
