@@ -8,3 +8,6 @@
 tlp-stat
 cpufrequtils
 powertop
+
+1]sudo apt-get install indicator-cpufreq
+2]reboot 

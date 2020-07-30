@@ -1,0 +1,264 @@
+1]general commands
+
+pwd
+cd
+mv
+ls
+cp
+rcp
+scp
+rm
+date
+id
+uname
+hostnamectl
+man
+watch
+su
+sudo
+whichis
+which
+whatis
+apt-get
+aptitude
+apt
+apt-cache show <command_name or package_name>			>>> show package deteails and dependencies 
+aptitude show <command_name or package_name>
+w
+who
+whoami
+
+
+2]user account related
+
+finger <username>							>>> get info about user
+useradd -m -s /bin/bash -G sudo knight                                >>> creating sudo account(user)
+useradd
+passwd <username>
+groupadd
+userdel
+groupdel
+groups <username>						>>> list user belongs which group
+chmod
+chown
+getfacl
+setfacl
+
+3]kernel commands
+
+lsmod
+insmod
+rmmod
+
+4]special characters
+
+;  						>>>> OR function
+&&						>>>> AND 
+|						>>>> pipe the output to another command
+&						>>>> to run the command background
+>
+>>
+2>
+2>>
+!
+$
+
+5]search, info, read, write, view
+
+find
+tee
+history
+lsof
+locate
+whichis
+echo
+file
+diff
+comm
+stat <file_name>
+grep
+sort
+less
+more
+head
+tail
+cat
+vim
+touch
+mkdir
+rmdir
+vi
+gedit
+ln
+ln -s <source_name> <target_name>
+sed
+clear
+
+6]networking
+
+ping
+netcat
+nc -zv 
+
+netstat
+netstat -tulnp				>>> show that tcp/udp/listening/port/process >>> simply list listening ports
+
+tcpdump
+traceroute                        >>> "-r" for routing table
+route
+route add -net 10.10.10.0/24 gw 192.168.1.1
+nmap
+dig
+dnsenume
+host
+strace
+ss -tuao                            >>> list all tcp/udp sockets, "o" for timer 
+nmcli
+nmtui
+ip
+ip a add 192.168.1.XXX/24 dev eth0
+wget
+crul
+ifconfig
+iwconfig
+ifup
+ifdown
+iw
+whois
+whatweb
+arp
+telnet
+scp
+nslookup
+
+7]performance
+
+htop
+top
+ps
+free
+vmstat
+iotop -o 						>>> sort by actually doing read/write process of your system
+iotop -a						>>> sort by max% read/write using process
+iotop -P						>>> process
+
+8]cpu frequency vs power 
+
+powertop
+cpupower
+watch grep \"cpu MHz\" /proc/cpuinfo
+s-tui
+tlp-stat
+cpufrequtils
+powertop
+apt install indicator-cpufreq
+cpufreq-set -r -g performance
+cpufreq-set -r -g powersave
+
+
+9]services
+
+systemctl
+timedatectl
+init
+
+10]remote system
+
+screen
+tmux
+ssh -X                                                          >>> kind of a gui tools
+
+11]firewall & security
+
+ufw
+ufw allow 3386                                                    >>> means allow all incomming traffing to port 3386
+ufw delete allow 3386                                             >>> to delete the rule
+
+iptables
+iptables -S 							>>> to list all rules in the firewall
+
+sestatus
+
+12]filesystem, harddisk, mount points
+
+mkfs
+fdisk
+gdisk
+mount
+umount
+partprobe
+dd
+df
+du
+
+13]hardware info
+
+iostat -dx 5						>>> option "d/x/5"  display/extended statistics/5 secound refersh rate
+lspci
+lshw
+lsblk
+blkid
+lsusb
+lslogins
+lscpu
+sensors
+
+14]system log 
+
+dmesg
+journalctl
+journalctl --list-boots
+journalctl -b <boot_id from previous command>
+journalctl -k                                 	>>> for kernel buffer message
+journalctl -f 					>>> to fellow current logs
+journalctl -r					>>> show in reverse
+journalctl -e 					>>> go to end of the page 
+
+
+15]backups and zip
+
+tar
+
+16]process
+
+ps
+ps -aux
+ps -ef
+kill -15 <pid>					>>> terminate the process give some time to save the status
+kill -9 <pid>					>>> force to stop immediate/ usaved process will be lost
+pkill
+pgrep
+jobs						>>> list the jobs
+fg <job id>
+bg <job id>
+ctrl+c						>>> kill the process/job
+ctrl+z						>>> stop the job
+
+17]start/stop system 
+
+shutdown
+reboot
+init
+
+
+18]system statistics
+
+sestatus
+mailstatus -p
+dstat
+netstat
+ifstat
+iostat
+vmstat
+tlp-stat
+stat <file_name>
+atop
+wavemon
+bmon
+
+19]messaging 
+
+wall
+mail
+mailstatus -p
+write user <tty>
