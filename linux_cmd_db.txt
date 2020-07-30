@@ -19,11 +19,6 @@ sudo
 whichis
 which
 whatis
-apt-get
-aptitude
-apt
-apt-cache show <command_name or package_name>			>>> show package deteails and dependencies 
-aptitude show <command_name or package_name>
 w
 who
 whoami
@@ -105,8 +100,6 @@ netstat -tulnp				>>> show that tcp/udp/listening/port/process >>> simply list l
 
 tcpdump
 traceroute                        >>> "-r" for routing table
-route
-route add -net 10.10.10.0/24 gw 192.168.1.1
 nmap
 dig
 dnsenume
@@ -117,6 +110,8 @@ nmcli
 nmtui
 ip
 ip a add 192.168.1.XXX/24 dev eth0
+route
+route add -net 10.10.10.0/24 gw 192.168.1.1
 wget
 crul
 ifconfig
@@ -151,7 +146,7 @@ s-tui
 tlp-stat
 cpufrequtils
 powertop
-apt install indicator-cpufreq
+apt install indicator-cpufreq && reboot                  	>>> only for ubuntu distro
 cpufreq-set -r -g performance
 cpufreq-set -r -g powersave
 
@@ -262,3 +257,28 @@ wall
 mail
 mailstatus -p
 write user <tty>
+
+20]scheduling jobs
+
+at
+atq
+atrm
+
+crontab
+crontab -l
+crontab -u knight -e
+
+
+21]install package management
+
+apt
+apt-get
+aptitude
+apt-cache show <command_name or package_name>			>>> show package deteails and dependencies 
+aptitude show <command_name or package_name>
+
+snap
+dpkg
+
+yum
+rpm
