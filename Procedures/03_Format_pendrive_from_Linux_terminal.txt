@@ -1,0 +1,114 @@
+Format pendrive from Linux terminal ===> { FAT32 or ntfs or ext4 }
+
+1] Insert pendrive
+
+2] To list memory devices 
+
+#lsblk
+#blkid
+#fdisk -l
+
+For Eg: 
+
+      Our pendrive /dev/sdb   16 GB
+
+
+3] To create a parition with 
+
+#fdisk /dev/sdb
+
+>n      >>> new partition
+>p      >>> primary partition
+>enter  >>> partition number = 1 (default)
+>enter  >>> first sector(default)
+>enter  >>> last sector(default)
+>w      >>> to write 
+
+4] To update that in Operating system
+
+#sudo partprobe
+
+5] To make file system
+
+	5.1] To format FAT32
+
+	#sudo mkfs.vfat -F 32 /dev/sdb1   or   #sudo mkfs -t vfat /dev/sdb1    >>> here "-t" option for choose filesystem
+
+	5.2] To format NTFS
+
+	#sudo mkfs -t ntfs /dev/sdb1 -L knight     	>>> here "-L" option for label the partition /dev/sdb1
+	
+	5.3] To format ext4
+	
+	#sudo mkfs.ext4 /dev/sdb1	or 	#sudo mkfs -t ext4 /dev/sdb1
+	
+
+6] Unplug the pendrive start usign it
+
+
+
+
+*) Write .iso file into pendrive from linux terminal
+
+0] Do this below steps before iso file write into a pendrive
+
+	*) keep in mind that partition shcema which is suitable for your computer (eg:) MBR or GPT
+	*) legacy >>> MBR
+	*) new    >>> GPT
+	
+	*) while you creating bootable pendrive for live boot os
+	*) your pendrive should not be created with partition before write up .iso
+	*) you should write (kali-linux.iso) file in pendrive like /dev/sdb   <<<  user $lsblk to find this 
+								     /dev/sdc
+								     /dev/sdd
+	**)your pendrive must be whole single partition
+		
+		/dev/sdb >>>> is correct partition
+		
+		/dev/sdb1 >>> is not correct partition
+							
+	***)To avoid this issue 
+	
+		#mkfs.vfat -F 32 /dev/sdb   >>> here you giving the whole pendrive (/dev/sdb)
+	
+	     
+1] List available storage
+
+#lsblk
+or
+#blkid
+or
+#fdisk -l
+
+	(eg:) 
+	/dev/sda   500 GB
+	/dev/sdb   28 GB    >>> we know the size to pendrive 	
+
+2] To make file system FAT32 on pendrive (/dev/sdb)
+
+#sudo mkfs.vfat -F 32 /dev/sdc
+
+3] To confirm unplug and again plugin pendrive
+
+4] Now you see that pendrive is mount 
+
+#lsblk
+
+5] To unmount the pendrive >>>> before start writing pendrive(/dev/sdb) must be unmount from everywhere
+
+#sudo umount /dev/sdb
+
+6] Check before start writing weather is it unmounted
+
+7] To start writing iso file
+
+#sudo dd bs=4M if=<path_to_.iso> of=/dev/sdb conv=fdatasync status=progress 
+
+or 
+
+$sudo dd bs=4M if=Downloads/ubuntu-19.04-desktop-amd64.iso of=/dev/sdb conv=fdatasync status=progress
+
+8] Once the process is completed you can start booting from your operation system
+
+
+

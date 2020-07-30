@@ -1,0 +1,143 @@
+*) Write .iso file into pendrive from linux terminal
+
+0] Do this below steps before iso file write into a pendrive
+
+	*) keep in mind that partition shcema which is suitable for your computer (eg:) MBR or GPT
+	*) legacy >>> MBR
+	*) new    >>> GPT
+	
+	*) while you creating bootable pendrive for live boot os
+	*) your pendrive should not be created with partition before write up .iso
+	*) you should write (kali-linux.iso) file in pendrive like /dev/sdb   <<<  user $lsblk to find this 
+								     /dev/sdc
+								     /dev/sdd
+	**)your pendrive must be whole single partition
+		
+		/dev/sdb >>>> is correct partition
+		
+		/dev/sdb1 >>> is not correct partition
+							
+	***)To avoid this issue 
+	
+		#mkfs.vfat -F 32 /dev/sdb   >>> here you giving the whole pendrive (/dev/sdb)
+	
+	     
+1] List available storage
+
+#lsblk
+or
+#blkid
+or
+#fdisk -l
+
+	(eg:) 
+	/dev/sda   500 GB
+	/dev/sdb   28 GB    >>> we know the size to pendrive 	
+
+2] To make file system FAT32 on pendrive (/dev/sdb)
+
+#sudo mkfs.vfat -F 32 /dev/sdc
+
+3] To confirm unplug and again plugin pendrive
+
+4] Now you see that pendrive is mount 
+
+#lsblk
+
+5] To unmount the pendrive >>>> before start writing pendrive(/dev/sdb) must be unmount from everywhere
+
+#sudo umount /dev/sdb
+
+6] Check before start writing weather is it unmounted
+
+7] To start writing iso file
+
+#sudo dd bs=4M if=<path_to_.iso> of=/dev/sdb conv=fdatasync status=progress 
+
+or 
+
+$sudo dd bs=4M if=Downloads/ubuntu-19.04-desktop-amd64.iso of=/dev/sdb conv=fdatasync status=progress
+
+8] Once the process is completed you can start booting from your operation system
+
+
+
+
+
+**) Making live persistence kali linux
+
+0] To boot kali linux live OS
+
+       *) Change the bios firmware boot sequence manually >> simply pointing to our pendrive >> (eg):press function key [F12 or F2 or F8 or F10 ]
+      **) Select live persistence from GRUB menu
+     ***) Run terminal once operating system started     
+
+1] To see the partition of the flash drive
+
+#fdisk -l
+
+2] To enter into the flash drive
+
+#fdisk /dev/sda
+
+or 
+
+#fdisk /dev/sdb
+
+or
+
+#fdisk /dev/sdc
+
+3] Create partition using fdisk
+
+n              >>>>   new partition
+p              >>>>   for primary partition
+first sector   >>>>   default value
+last sector    >>>>   default value
+w              >>>>   write the change into disk
+
+#partprobe
+
+4] To see newly created partition 
+
+#fdisk -l
+
+>>>>for example i've received output like 
+
+/dev/sdb1 * boot partition
+/dev/sdb2
+/dev/sdb3 >>>> new created partition
+
+5] To make file system for new partition(/dev/sdb3)
+
+#mkfs.ext4 -L persistence /dev/sdb3
+
+*** wait for a while ****
+
+6] Label the new partition(/dev/sdb3)
+
+#e2label /dev/sdb3 persistence
+
+7] persistence mount directory
+
+#mkdir -p /mnt/usb
+
+8] mount (/dev/sdb3) to /mnt/usb directory
+
+#mount /dev/sdb3 /mnt/usb
+
+9] Create a file in persistence.conf
+
+#echo "/ union" > /mnt/usb/persistence.conf
+
+10] Unmount the partition
+
+#umount /dev/sdb3
+
+11] restart the system
+
+#reboot
+
+Reference URL  >>>>>>>   https://www.youtube.com/watch?v=fP1Hunmd3Vg
+
+

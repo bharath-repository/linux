@@ -1,0 +1,81 @@
+0] To download best format available in youtube
+
+#youtube-dl -f best (URL of the exact video)
+
+1] To download video from youtube 
+
+#youtube-dl (URL of the exact video)
+
+2] To see the available formats in youtube video
+
+#youtube-dl -F (URL of the video)
+
+3] To download selected video format
+
+#youtube-dl -f (code which you come know from above command) (URL of the video)
+
+For Eg:for mp4 format
+         
+       #youtube-dl -f 22 https://youtu.be/G8wg6Ud4g0M
+       
+For dowloading selected video and audio format and combine       
+       
+       #youtube-dl -f 137+140 https://youtube.oie/oafo
+       
+
+4] To download audio file alone
+
+#youtube-dl -x --audio-format mp3 (URL of the exact video)
+
+For Eg: for mp3 format
+
+       #youtube-dl -x --audio-format mp3 https://youtu.be/NPnxw00z63I?t=10
+
+5] To change download file name
+
+#youtube-dl -A (URL of the file)
+
+6] To add serial number front of the file name
+
+#youtube-dl -o '%(playlist_index)s. %(title)s.%(ext)s' (URL of the file) 
+
+For Eg:
+
+       #youtube-dl -o '%(playlist_index)s. %(title)s.%(ext)s' https://youtu.be/6VT8hDr2GhU?list=PLfVsf4Bjg79CZ5kHTiQHcm-l2q8j06ofd -f 18
+
+7] Ignoring and continue with and resume download
+
+#youtube-dl -i(will ignore the deleted video and continue download) -c(will resume download if any interruption happened) (URL of the video)
+
+8] To download video with sub titles
+
+#youtube-dl --write-srt --sub-lang en https://www.youtube.com/watch?v=smjfGmCn7x0
+
+#youtube-dl --write-auto-sub https://www.youtube.com/watch?v=smjfGmCn7x0
+
+9] To download selected video range from playlist [or] single video from a playlist
+
+#youtube-dl --playlist-items 5-10 youtube-playlist-url
+#youtube-dl --playlist-start 5 youtube-playlist-url
+#youtube-dl --playlist-end 10 youtube-playlist-url
+#youtube-dl --playlist-reverse  youtube-playlist-url
+
+or 
+
+#youtube-dl --no-playlist youtube-playlist-url  <<<< url means paly the selected video in youtube playlist and copy the url from there
+
+10] To update youtube-dl
+
+#youtube-dl -U
+
+11] For combiening video format and audio formats {"avconv" is must be pre-installed} or {"ffmpeg" is must be pre-installed} 
+
+#apt-get install avconv 
+
+or 
+
+#apt-get install ffmpeg
+
+
+
+

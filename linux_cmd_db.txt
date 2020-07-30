@@ -16,8 +16,6 @@ man
 watch
 su
 sudo
-whichis
-which
 whatis
 w
 who
@@ -38,12 +36,15 @@ chmod
 chown
 getfacl
 setfacl
+umask
 
 3]kernel commands
 
 lsmod
 insmod
 rmmod
+modprobe -r
+modinfo
 
 4]special characters
 
@@ -71,8 +72,11 @@ file
 diff
 comm
 stat <file_name>
+type
+which
 grep
 sort
+wc
 less
 more
 head
@@ -86,6 +90,10 @@ vi
 gedit
 ln
 ln -s <source_name> <target_name>
+zcat
+cut
+paste
+split
 sed
 clear
 
@@ -131,7 +139,7 @@ nslookup
 htop
 top
 ps
-free
+free -h
 vmstat
 iotop -o 						>>> sort by actually doing read/write process of your system
 iotop -a						>>> sort by max% read/write using process
@@ -156,6 +164,7 @@ cpufreq-set -r -g powersave
 systemctl
 timedatectl
 init
+ldconfig				>>> shared library configuration
 
 10]remote system
 
@@ -176,7 +185,24 @@ sestatus
 
 12]filesystem, harddisk, mount points
 
+udevadm monitor
+lsblk
+blkid
+
 mkfs
+mkfs.ext4 /dev/sdb
+mkfs -t ext4 /dev/sdb -L knight			>>> To set label for partition here knight is label for partition /dev/sdb
+mkfs -t xfs /dev/sdb
+mkfs -t ntfs /dev/sdb					>>> NTFS >>> for windows operation system
+mkfs -t vfat /dev/sdb 					>>> FAT32 >> default compatible with all devices
+mkfs.vfat -F 32 /dev/sdb				>>> FAT32 >> default compatible with all devices
+
+e2label /dev/sdb knight				>>  to set label
+e2label /dev/sdb ""					>>  to remove label pass empty string as an argument
+
+mkswap
+swapon -all
+swapoff
 fdisk
 gdisk
 mount
@@ -185,6 +211,21 @@ partprobe
 dd
 df
 du
+
+pvs
+pvcreate
+vgs
+vgcreate
+lvs
+lvcreate
+lvextend
+lvreduce
+vgremove
+pvremove
+pvdisplay
+vgdisplay
+lvdisplay
+
 
 13]hardware info
 
@@ -213,6 +254,7 @@ journalctl -e 					>>> go to end of the page
 15]backups and zip
 
 tar
+gunzip
 
 16]process
 
@@ -279,6 +321,12 @@ aptitude show <command_name or package_name>
 
 snap
 dpkg
+dpkg -i --force <name.deb>			>>> install without dependency
+dpkg -r <name.deb>				>>> remove package
+dpkg -I <name.deb>				>>> info about the name.deb
+dpkg -L <name.deb>				>>> list installed package and it's contents
+dpkg-reconfigure <package_name>
+
 
 yum
 rpm
@@ -302,8 +350,26 @@ mysql
 postgresql
 git
 
+echo $SHELL
+echo $HOST
+echo $USER
+echo $TERM
+echo $PATH
+env
+bash
+unset
+set
+exports
 
 
+23]grub, bios, uefi
+
+grub-install
+update-grub
+grub-mkconfig
+
+
+k.bharath
 
 
 

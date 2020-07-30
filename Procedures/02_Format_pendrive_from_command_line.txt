@@ -1,0 +1,25 @@
+Format pendrive from windows command line
+
+Making of bootable pendrive from windows command line
+
+1] Insert the pendrive
+
+2] Go to all Programs >>> Search CMD >>> Right click that cmd.exe  then run as administrator
+
+3] you have to give these commands
+                  #diskpart
+                  #list disk
+                  #select disk number(from above command you already come to know about disk NO) 
+                  #clean
+                  #create partition primary
+                  #select partition 1
+                  #active
+                  #format fs=fat32 quick (or) #format fs=ntfs quick
+                  #assign
+                  #exit
+                  #exit
+
+Reference:
+How to Make USB  Bootable
+https://www.wikihow.com/Make-a-USB-Bootable
+
