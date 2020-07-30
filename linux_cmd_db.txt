@@ -282,3 +282,26 @@ dpkg
 
 yum
 rpm
+
+
+22]devlopment tools
+
+
+gcc
+nvm
+node
+java
+python3.8
+pip3
+mongo
+mysql
+git
+
+
+
+
+
+
+
+
+
