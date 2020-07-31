@@ -16,7 +16,6 @@ man
 watch
 su
 sudo
-whatis
 w
 who
 whoami
@@ -141,9 +140,10 @@ top
 ps
 free -h
 vmstat
-iotop -o 						>>> sort by actually doing read/write process of your system
+iotop -o -u knight					>>> sort by actually doing read/write process of your system >> "-u" specify user 
 iotop -a						>>> sort by max% read/write using process
 iotop -P						>>> process
+iotop -d 5						>>> iterate in 5 sec delay
 
 8]cpu frequency vs power 
 
@@ -331,9 +331,9 @@ dpkg-reconfigure <package_name>
 yum
 rpm
 
+wine
 
 22]devlopment tools
-
 
 gcc
 nano
@@ -369,7 +369,13 @@ update-grub
 grub-mkconfig
 
 
-k.bharath
+24]gathering info about a command 
+
+man <command_name>
+whatis <command_name>
+whereis <command_name>
+which <command_name>
+<command_name> --help
 
 
 

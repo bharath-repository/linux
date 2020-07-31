@@ -1,11 +1,27 @@
 Cheatsheet
 
-# session management
-tmux ls (or tmux list-sessions)
-tmux new -s session-name
+pane horizantal split
+
+ctrl + b then press '"'
+
+pane vertical split
+
+ctrl + b then press '%'
+
+
+Session management
+
+#tmux ls (or tmux list-sessions)
+
+#tmux new -s session-name
+
 Ctrl-b d Detach from session
-tmux attach -t [session name]
-tmux kill-session -t session-name
+
+#tmux attach -t [session name]
+
+#tmux kill-session -t session-name
+
+
 
 Ctrl-b c Create new window
 Ctrl-b d Detach current client

@@ -1,0 +1,19 @@
+1]top 10 cpu using process
+
+#ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -n 10
+
+2]top 10 mem using process
+
+#ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -n 10
+
+3]execution time of a process
+
+#ps -eo comm,etime,user | grep httpd
+
+4]The Unix format in which you should precede the flags with a dash.
+
+eg:😋️	#ps -x	
+		
+	The BSD format in which you should not precede the flags with a dash.
+	
+	#ps x

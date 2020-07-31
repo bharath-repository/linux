@@ -1,0 +1,24 @@
+cpu frequency
+
+#watch -n 3 grep \"cpu MHz\" /proc/cpuinfo
+
+cpu temperature
+
+#watch -n 3 tlp-stat -t
+
+cpu usage
+
+#watch -n 3 ps -eo pid,ppid,%mem,cmd,%cpu --sort=-%cpu
+
+memory usage
+
+#watch -n 3 ps -eo pid,ppid,%cpu,cmd,%mem --sort=-%mem
+
+swap & main memory usage
+
+#free -h -s 3
+
+device read/write usage
+
+#sudo iotop -o -d 3
+
