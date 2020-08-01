@@ -410,8 +410,9 @@ which <command_name>
 
 owasp-zap
 burpsuite
-firefox
+firefox-foxyproxy
 chrome
+brave-browser
 gnome-tweak-tool
 gedit
 libreoffice
@@ -429,7 +430,7 @@ virtualbox
 
 steam				>>> gaming software
 
-simplenote			>>> educational notes taking sofrware
+joplin				>>> educational notes taking sofrware
 
 GIMP				>>> software for photo editing
 
@@ -437,10 +438,13 @@ nitroshare 			>>> file sharing between all type of device eg: mobile
 
 synaptic   			>>> graphical package manager
 
+stacer				<<<<<  Stacer : https://github.com/oguzhaninan/Stacer >>  Linux System Optimizer & Monitoring.
 
-stacer			<<<<<  Stacer : https://github.com/oguzhaninan/Stacer
+timeshift 	 		<<<<<  snapshot & backup restoration of you entire system >> https://www.youtube.com/watch?v=ShW7N...
 
 
-timeshift  		<<<<<  snapshot & backup restoration of you entire system >> https://www.youtube.com/watch?v=ShW7N...
+
+
+
 
 
