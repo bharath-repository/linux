@@ -24,13 +24,13 @@ whoami
 2]user account related
 
 finger <username>							>>> get info about user
-useradd -m -s /bin/bash -G sudo knight                                >>> creating sudo account(user)
+useradd -m -s /bin/bash -G sudo knight              			>>> creating sudo account(user)
 useradd
 passwd <username>
 groupadd
 userdel
 groupdel
-groups <username>						>>> list user belongs which group
+groups <username>							>>> list user belongs which group
 chmod
 chown
 getfacl
@@ -47,10 +47,10 @@ modinfo
 
 4]special characters
 
-;  						>>>> OR function
-&&						>>>> AND 
-|						>>>> pipe the output to another command
-&						>>>> to run the command background
+;  									>>>> OR function
+&&									>>>> AND 
+|									>>>> pipe the output to another command
+&									>>>> to run the command background
 >
 >>
 2>
@@ -105,16 +105,16 @@ netcat
 nc -zv 
 
 netstat
-netstat -tulnp				>>> show that tcp/udp/listening/port/process >>> simply list listening ports
-vnstat -l 1				>>> live bandwidth monitoring
+netstat -tulnp								>>> show that tcp/udp/listening/port/process >>> simply list listening ports
+vnstat -l 1								>>> live bandwidth monitoring
 tcpdump
-traceroute                     	>>> "-r" for routing table
+traceroute        					             	>>> "-r" for routing table
 nmap
 dig
 dnsenume
 host
 strace
-ss -tuao                            >>> list all tcp/udp sockets, "o" for timer 
+ss -tuao                         					>>> list all tcp/udp sockets, "o" for timer 
 nmcli
 nmtui
 ip
@@ -147,15 +147,15 @@ ps
 free -h
 vmstat
 
-mpstat -P ALL 3					>>> 3 refresh rate all logical core details
+mpstat -P ALL 3							>>> 3 refresh rate all logical core details
 mpstat <refresh-rate> <how-many report>
-mpstat 3 10						>>> here 3 sec refresh rate 10 time report will be generate
-mpstat 5						>>> generate report every 5 sec contineously 
+mpstat 3 10								>>> here 3 sec refresh rate 10 time report will be generate
+mpstat 5								>>> generate report every 5 sec contineously 
 
-iotop -o -u knight					>>> sort by actually doing read/write process of your system >> "-u" specify user 
-iotop -a						>>> sort by max% read/write using process
-iotop -P						>>> process
-iotop -d 5						>>> iterate in 5 sec delay
+iotop -o -u knight							>>> sort by actually doing read/write process of your system,"u" >> user  
+iotop -a								>>> sort by max% read/write using process
+iotop -P								>>> process
+iotop -d 5								>>> iterate in 5 sec delay
 
 8]cpu frequency vs power 
 
@@ -166,7 +166,7 @@ s-tui
 tlp-stat
 cpufrequtils
 powertop
-apt install indicator-cpufreq && reboot                  	>>> only for ubuntu distro
+apt install indicator-cpufreq && reboot                		>>> only for ubuntu distro
 cpufreq-set -r -g performance
 cpufreq-set -r -g powersave
 
@@ -176,22 +176,22 @@ cpufreq-set -r -g powersave
 systemctl
 timedatectl
 init
-ldconfig				>>> shared library configuration
+ldconfig								>>> shared library configuration
 
 10]remote system
 
 screen
 tmux
-ssh -X                                                          >>> kind of a gui tools
+ssh -X                                                          	>>> kind of a gui tools
 
 11]firewall & security
 
 ufw
-ufw allow 3386                                                    >>> means allow all incomming traffing to port 3386
-ufw delete allow 3386                                             >>> to delete the rule
+ufw allow 3386                                              		>>> means allow all incomming traffing to port 3386
+ufw delete allow 3386                                          	>>> to delete the rule
 
 iptables
-iptables -S 							>>> to list all rules in the firewall
+iptables -S 								>>> to list all rules in the firewall
 
 sestatus
 
@@ -203,14 +203,14 @@ blkid
 
 mkfs
 mkfs.ext4 /dev/sdb
-mkfs -t ext4 /dev/sdb -L knight			>>> To set label for partition here knight is label for partition /dev/sdb
+mkfs -t ext4 /dev/sdb -L knight					>>> To set label for partition here knight is label for partition /dev/sdb
 mkfs -t xfs /dev/sdb
-mkfs -t ntfs /dev/sdb					>>> NTFS >>> for windows operation system
-mkfs -t vfat /dev/sdb 					>>> FAT32 >> default compatible with all devices
-mkfs.vfat -F 32 /dev/sdb				>>> FAT32 >> default compatible with all devices
+mkfs -t ntfs /dev/sdb							>>> NTFS >>> for windows operation system
+mkfs -t vfat /dev/sdb 							>>> FAT32 >> default compatible with all devices
+mkfs.vfat -F 32 /dev/sdb						>>> FAT32 >> default compatible with all devices
 
-e2label /dev/sdb knight				>>  to set label
-e2label /dev/sdb ""					>>  to remove label pass empty string as an argument
+e2label /dev/sdb knight						>>  to set label
+e2label /dev/sdb ""							>>  to remove label pass empty string as an argument
 
 mkswap
 swapon -all
@@ -241,7 +241,7 @@ lvdisplay
 
 13]hardware info
 
-iostat -dx 5						>>> option "d/x/5"  display/extended statistics/5 secound refersh rate
+iostat -dx 5								>>> option "d/x/5"  display/extended statistics/5 secound refersh rate
 lspci
 lshw
 lsblk
@@ -257,10 +257,10 @@ dmesg
 journalctl
 journalctl --list-boots
 journalctl -b <boot_id from previous command>
-journalctl -k                                 	>>> for kernel buffer message
-journalctl -f 					>>> to fellow current logs
-journalctl -r					>>> show in reverse
-journalctl -e 					>>> go to end of the page 
+journalctl -k                         		        	>>> for kernel buffer message
+journalctl -f 								>>> to fellow current logs
+journalctl -r								>>> show in reverse
+journalctl -e 								>>> go to end of the page 
 
 
 15]backups and zip
@@ -273,15 +273,15 @@ gunzip
 ps
 ps -aux
 ps -ef
-kill -15 <pid>					>>> terminate the process give some time to save the status
-kill -9 <pid>					>>> force to stop immediate/ usaved process will be lost
+kill -15 <pid>								>>> terminate the process give some time to save the status
+kill -9 <pid>								>>> force to stop immediate/ usaved process will be lost
 pkill
 pgrep
-jobs						>>> list the jobs
+jobs									>>> list the jobs
 fg <job id>
 bg <job id>
-ctrl+c						>>> kill the process/job
-ctrl+z						>>> stop the job
+ctrl+c									>>> kill the process/job
+ctrl+z									>>> stop the job
 
 17]start/stop system 
 
@@ -313,7 +313,7 @@ bmon
 bmon -p wlp2s0 -o curses
 nethogs
 nload
-vnstat -l 1                        		>>>> live traffic rate 
+vnstat -l 1                        					>>>> live traffic rate 
 
 iostat
 vmstat
@@ -345,15 +345,15 @@ crontab -u knight -e
 apt
 apt-get
 aptitude
-apt-cache show <command_name or package_name>			>>> show package deteails and dependencies 
+apt-cache show <command_name or package_name>				>>> show package deteails and dependencies 
 aptitude show <command_name or package_name>
 
 snap
 dpkg
-dpkg -i --force <name.deb>			>>> install without dependency
-dpkg -r <name.deb>				>>> remove package
-dpkg -I <name.deb>				>>> info about the name.deb
-dpkg -L <name.deb>				>>> list installed package and it's contents
+dpkg -i --force <name.deb>						>>> install without dependency
+dpkg -r <name.deb>							>>> remove package
+dpkg -I <name.deb>							>>> info about the name.deb
+dpkg -L <name.deb>							>>> list installed package and it's contents
 dpkg-reconfigure <package_name>
 
 
