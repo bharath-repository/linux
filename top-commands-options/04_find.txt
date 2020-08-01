@@ -1,0 +1,77 @@
+0] find important options
+
+# find <target_dir> <option> <argument_depends>
+			-type			find . -type f,d			>>> regular file, directory file, link file ......
+			-name			find . -name javascript.txt		>>> exact name of the file
+			-iname			find . -iname javaScript.txt		>>> case insensitive
+			-user			find . -user knight			>>> user owned file
+			-size 			find . -size -10k			>>> show file size less than 10kb	
+			-perm			find . -perm 664			>>> file with this premission -rw_rw_r__
+			-maxdepth		find . -maxdepth 1			>>> sub dir searching depth
+			-samefile		find . -samefile java.txt		>>> used to find hard link file
+			-exec			
+			-cmin			
+			-ctime		
+			-amin						
+			-atime			find $HOME -atime 0 		>>>>  find the file that accessed in the last twenty-four hours.
+			-mmin			find $HOME -mmin 10		>>>>  File's data was last modified 10 minutes ago.	
+			-mtime
+			-inum			find . -inum			>>>> search using inode to find hard link it is used
+			-daystart
+			
+			
+			find . -atime -7	>>> have been accessed in seven days
+			find . -atime +7 	>>> have not been accessed in seven days
+			find . -atime 7	>>> have accessed exactly at 7th day
+			
+			find . -daystart 	>>> today as per (+GTM) from 00:00AM
+			
+			find . -mtime 0 	>>> last 24hrs of uptime from now on
+			
+			find . -mtime -1	>>> modified since yesterday
+			
+			find . -mmin -5	>>> file modified lesser than 5mins
+			find . -mmin +5	>>> file modified greater than 5mins
+			find . -mmin 5 	>>> modified exactly at 5th min from the command execution
+
+				-size -10k	>>> file size less than 10kb
+				-size +10M	>>> file size more than 10MiB
+				-size 10k	>>> file size exactly equal to 10kb
+				
+#find . -iname "*.txt" -amin -60  		>>> find the file with exetention .txt accessed within last one hour(60mins)	
+
+#find /home -mtime +90				>>>> Look for files that have not been modified in 90 days in the /home directory
+
+1] find a file using name in current dir and delete that file in the same command
+
+#find . -name <name of the file> -exec /bin/rm {} \;
+
+
+2] using xargs command
+
+#find . -name <name of the file> | xargs /bin/rm
+
+3] find file and copy that file to current dir
+
+#find . -name test.md -exec /bin/cp -v  {} ./ \;
+
+4] 
+
+#/bin/rm `find /var/tmp/stuff -mtime +90 -print`
+
+
+5]
+
+#cp  -v `find . -iname test.md` Music/
+
+
+6]
+
+#find . -iname "test 1.txt" -exec /bin/rm -v {}  \;
+
+#find . -iname "test 1.txt" | xargs /bin/rm -v
+
+
+Ref URL: https://www.gnu.org/software/findutils/manual/html_node/find_html/Deleting-Files.html
+
+

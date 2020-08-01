@@ -1,0 +1,18 @@
+1]find the inode first
+
+#ls -li <file_path>
+
+2]
+
+#find / -inode <inode_number from above command output>
+
+
+3]If you do not want to descend directories on other filesystems such as mounted once, try:
+
+#find /backups/ -xdev -samefile /etc/passwd
+
+
+or else
+
+
+1]find / -samefile <absolute/relative file_path>

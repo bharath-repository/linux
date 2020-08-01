@@ -73,7 +73,6 @@ comm
 stat <file_name>
 type
 which
-grep
 sort
 wc
 less
@@ -93,8 +92,11 @@ zcat
 cut
 paste
 split
-sed
 clear
+
+grep
+sed
+awk
 
 6]networking
 
@@ -104,9 +106,9 @@ nc -zv
 
 netstat
 netstat -tulnp				>>> show that tcp/udp/listening/port/process >>> simply list listening ports
-
+vnstat -l 1				>>> live bandwidth monitoring
 tcpdump
-traceroute                        >>> "-r" for routing table
+traceroute                     	>>> "-r" for routing table
 nmap
 dig
 dnsenume
@@ -133,13 +135,23 @@ telnet
 scp
 nslookup
 
+
 7]performance
 
 htop
+nmon
 top
+nice
+renice
 ps
 free -h
 vmstat
+
+mpstat -P ALL 3					>>> 3 refresh rate all logical core details
+mpstat <refresh-rate> <how-many report>
+mpstat 3 10						>>> here 3 sec refresh rate 10 time report will be generate
+mpstat 5						>>> generate report every 5 sec contineously 
+
 iotop -o -u knight					>>> sort by actually doing read/write process of your system >> "-u" specify user 
 iotop -a						>>> sort by max% read/write using process
 iotop -P						>>> process
@@ -282,16 +294,33 @@ init
 
 sestatus
 mailstatus -p
-dstat
+
+dstat 3 3
+dstat 
+📈️dstat -lcndmprs --cpufreq
+
+mpstat
+nmon
+
 netstat
 ifstat
+iftop
+cbn
+iperf -s
+iptraf
+wavemon
+bmon
+bmon -p wlp2s0 -o curses
+nethogs
+nload
+vnstat -l 1                        		>>>> live traffic rate 
+
 iostat
 vmstat
 tlp-stat
 stat <file_name>
 atop
-wavemon
-bmon
+
 
 19]messaging 
 
@@ -377,8 +406,41 @@ whereis <command_name>
 which <command_name>
 <command_name> --help
 
+25] important graphical softwares
+
+owasp-zap
+burpsuite
+firefox
+chrome
+gnome-tweak-tool
+gedit
+libreoffice
+fbreader
+vlc
+gufw
+deluge
+mongo-compass
+mysql-workbeanch
+chrome-postman
+vscode
+pycharm
+virtualbox
 
 
+steam				>>> gaming software
 
+simplenote			>>> educational notes taking sofrware
+
+GIMP				>>> software for photo editing
+
+nitroshare 			>>> file sharing between all type of device eg: mobile
+
+synaptic   			>>> graphical package manager
+
+
+stacer			<<<<<  Stacer : https://github.com/oguzhaninan/Stacer
+
+
+timeshift  		<<<<<  snapshot & backup restoration of you entire system >> https://www.youtube.com/watch?v=ShW7N...
 
 

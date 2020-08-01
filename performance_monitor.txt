@@ -1,24 +1,56 @@
-cpu frequency
+0] must know about
+
+#dstat 3 3 
+
+1] cpu frequency
 
 #watch -n 3 grep \"cpu MHz\" /proc/cpuinfo
 
-cpu temperature
+2] cpu temperature
 
 #watch -n 3 tlp-stat -t
 
-cpu usage
+3] cpu usage
 
 #watch -n 3 ps -eo pid,ppid,%mem,cmd,%cpu --sort=-%cpu
 
-memory usage
+4] memory usage
 
 #watch -n 3 ps -eo pid,ppid,%cpu,cmd,%mem --sort=-%mem
 
-swap & main memory usage
+5] swap & main memory usage
 
 #free -h -s 3
 
-device read/write usage
+6] device read/write usage
 
 #sudo iotop -o -d 3
+
+7] live interface bandwidth/speed monitoring
+
+#vnstat -l 1
+
+8] load average
+
+#watch -n 3 uptime
+
+
+9] cpu cycle info
+
+#dstat -c
+#dstat -lcndmprs --cpufreq
+
+or
+
+#mpstat 3 5 -P ALL
+
+
+
+
+
+
+
+
+
+
 
