@@ -10,8 +10,6 @@ scp
 rm
 date
 id
-uname
-hostnamectl
 man
 watch
 su
@@ -56,11 +54,15 @@ modinfo
 2>
 2>>
 !
-$
+echo $$ or pgrep bash							>>> current running bash ps id
+echo $#
+
+
 
 5]search, info, read, write, view
 
 find
+find . -daystart -maxdepth 3 -iname "*.md"
 tee
 history
 lsof
@@ -95,6 +97,7 @@ split
 clear
 
 grep
+grep -wi "barath"							>>> w-whole word only 
 sed
 awk
 
@@ -139,6 +142,7 @@ nslookup
 7]performance
 
 htop
+glancesq
 nmon
 top
 nice
@@ -162,7 +166,7 @@ iotop -d 5								>>> iterate in 5 sec delay
 powertop
 cpupower
 watch grep \"cpu MHz\" /proc/cpuinfo
-s-tui
+s-tui  								>>> computer stress test >>> performance test
 tlp-stat
 cpufrequtils
 powertop
@@ -273,6 +277,14 @@ gunzip
 ps
 ps -aux
 ps -ef
+ps -aux --forest | grep brave						>>> to see process in tree view
+ps -aux | grep -Evwi "root|Knight"					>>> E-multiple string, v-invert search, i-case insensitive
+ps -aux | grep -iw "knight"
+ps -aux | grep -iw "root"
+ps -eo pid,ppid,%mem,cmd,%cpu --sort=-%cpu | head -n 10		>>> top 10 cpu using process
+ps -eo pid,ppid,%cpu,cmd,%mem --sort=-%mem | head -n 10		>>> top 10 memory using process
+pstree
+
 kill -15 <pid>								>>> terminate the process give some time to save the status
 kill -9 <pid>								>>> force to stop immediate/ usaved process will be lost
 pkill
@@ -348,13 +360,31 @@ aptitude
 apt-cache show <command_name or package_name>				>>> show package deteails and dependencies 
 aptitude show <command_name or package_name>
 
+
+apt list --installed | grep -i "\[installed\]"			>>> list installed packages
+apt list --installed | grep -i "automatic"       			>>> list automatic/dependency package 
+apt list --upgradeable							>>> all upgradeable packages
+apt list depends <package_name>
+
+apt-cache show <package-name>
+apt info <package-name>
+apt-cache search <package-name>
+
+apt remove <package-name> 						>>> removes package binary files alone
+apt purge <package-name>						>>> remove configuration/binary 
+apt autoremove <package-name>						>>> delete dependency of that package-name
+
 snap
+
+
 dpkg
+dpkg -l								>>> list all installed packages
 dpkg -i --force <name.deb>						>>> install without dependency
 dpkg -r <name.deb>							>>> remove package
 dpkg -I <name.deb>							>>> info about the name.deb
 dpkg -L <name.deb>							>>> list installed package and it's contents
 dpkg-reconfigure <package_name>
+
 
 
 yum
@@ -378,12 +408,16 @@ mongo
 mysql
 postgresql
 git
+grive
+grive-tools
 
 echo $SHELL
-echo $HOST
+echo $HOSTNAME
 echo $USER
 echo $TERM
 echo $PATH
+echo $$
+echo $#
 env
 bash
 unset
@@ -406,7 +440,15 @@ whereis <command_name>
 which <command_name>
 <command_name> --help
 
-25] important graphical softwares
+
+25] OS info
+
+uname -a
+hostnamectl
+lsb_release -a
+
+
+26] important graphical softwares
 
 owasp-zap
 burpsuite
@@ -427,6 +469,9 @@ vscode
 pycharm
 virtualbox
 
+
+
+grive-tools			>>> google drive & linux local directory synchronization software
 
 steam				>>> gaming software
 

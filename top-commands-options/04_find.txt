@@ -72,6 +72,13 @@
 #find . -iname "test 1.txt" | xargs /bin/rm -v
 
 
+7]best practise to use "-exec"
+
+#find . -maxdepth 2 -daystart -iname "*.txt" -exec /bin/ls -l {} \;
+
+
+
+
 Ref URL: https://www.gnu.org/software/findutils/manual/html_node/find_html/Deleting-Files.html
 
 

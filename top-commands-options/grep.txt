@@ -1,1 +1,5 @@
 grep
+
+grep -w "knight"							>>> w-only whole word
+
+ps -aux | grep -Evi "root|Knight"					>>> E-multiple string, v-invert search, i-case insensitive
