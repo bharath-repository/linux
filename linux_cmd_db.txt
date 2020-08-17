@@ -148,7 +148,8 @@ top
 nice
 renice
 ps
-free -h
+free -h								>>> h human readable format
+free -h -s 2 -c 5						>>> s/c ===> 2 sec refresh rate, generate only 5 reports
 vmstat
 
 mpstat -P ALL 3							>>> 3 refresh rate all logical core details
@@ -245,7 +246,7 @@ lvdisplay
 
 13]hardware info
 
-iostat -dx 5								>>> option "d/x/5"  display/extended statistics/5 secound refersh rate
+iostat -dx 5								>>> option "d/x/5"  display/extended statistics/5 secound refresh rate
 lspci
 lshw
 lsblk
@@ -270,7 +271,9 @@ journalctl -e 								>>> go to end of the page
 15]backups and zip
 
 tar
+tar -xvzf <name.tgz>							>>> tar archive Gnu zip files
 gunzip
+unzip <name.zip>
 
 16]process
 
@@ -327,7 +330,11 @@ nethogs
 nload
 vnstat -l 1                        					>>>> live traffic rate 
 
-iostat
+iostat -d								>>>> only show device report
+iostat -c								>>>> only show cpu report
+iostat -h 2 5								>>>> h human readable format, 2 sec refresh rate, generate 5 times this reports 
+iostat -t -p sda							>>>> t for timestamp, p show only sda block device
+
 vmstat
 tlp-stat
 stat <file_name>
@@ -486,6 +493,20 @@ synaptic   			>>> graphical package manager
 stacer				<<<<<  Stacer : https://github.com/oguzhaninan/Stacer >>  Linux System Optimizer & Monitoring.
 
 timeshift 	 		<<<<<  snapshot & backup restoration of you entire system >> https://www.youtube.com/watch?v=ShW7N...
+
+
+
+27] Time and date
+
+timedatectl
+timedatectl list-timezones						>>>>	list all timezones
+timedatectl set-timezone "Asia/Kolkata"
+systemctl start ntp							>>>>	auto update time from internet ntp server
+hwclock
+hwclock -w								>>>>>	to set system clock to hardware clock
+
+date
+time
 
 
 
