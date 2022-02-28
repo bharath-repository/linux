@@ -227,6 +227,7 @@ umount
 partprobe
 dd
 df
+sudo du -h -d 1 | sort -hr
 du
 
 pvs
