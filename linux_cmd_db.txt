@@ -227,6 +227,7 @@ umount
 partprobe
 dd
 df
+sudo df -h | grep nvm
 sudo du -h -d 1 | sort -hr
 du
 
