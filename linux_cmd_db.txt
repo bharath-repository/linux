@@ -183,9 +183,11 @@ timedatectl
 init
 ldconfig								>>> shared library configuration
 
-10]remote system
+10]Remote system & Network device console login
 
 screen
+sudo screen /dev/ttyUSB0              >>>> To connect to a network device using console
+sudo dmesg | grep -i tty              >>>> To find which com port to connect to
 tmux
 ssh -X                                                          	>>> kind of a gui tools
 
