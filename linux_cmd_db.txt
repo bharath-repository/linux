@@ -191,6 +191,8 @@ sudo screen /dev/ttyUSB0              >>>> To connect to a network device using 
 sudo dmesg | grep -i tty              >>>> To find which com port to connect to
 tmux
 ssh -X                                                          	>>> kind of a gui tools
+ssh -oHostKeyAlgorithms=+ssh-rsa root@192.168.10.1
+ssh -oHostKeyAlgorithms=+ssh-dss root@192.168.10.1
 
 11]firewall & security
 
