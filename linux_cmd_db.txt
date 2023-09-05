@@ -232,7 +232,7 @@ umount
 partprobe
 dd
 df
-sudo df -h | grep nvm                     >>>  To view disk space utilized
+sudo df -h | grep nvm                     >>>  To view hard disk space utilized
 du
 sudo du -h -d 1 | sort -hr                >>> To list child directory size 
 
