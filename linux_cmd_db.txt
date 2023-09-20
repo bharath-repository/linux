@@ -24,6 +24,8 @@ whoami
 finger <username>							>>> get info about user
 useradd -m -s /bin/bash -G sudo knight              			>>> creating sudo account(user)
 useradd
+usermod -l [new-user-name] [existing-user-name]                   >>> To change login username (do it from root login)
+usermod -d /home/[newly-created-username] -m [new username]       >>> To the existing home dir content to new dir
 passwd <username>
 groupadd
 userdel
