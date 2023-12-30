@@ -108,7 +108,8 @@ awk
 ping
 netcat
 nc -zv 
-
+resolvectl                    >>>> To see all the interface DNS alone
+nmcli dev show wlp4s0         >>>> To see interface ip,subnetmask,gateway,dns,mac,
 netstat
 netstat -tulnp								>>> show that tcp/udp/listening/port/process >>> simply list listening ports
 vnstat -l 1								>>> live bandwidth monitoring
