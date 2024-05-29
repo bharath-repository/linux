@@ -137,6 +137,8 @@ iw
 whois
 whatweb
 arp
+sudo arp-scap --localnet                    >>> To list all connect device in a local subnet
+sudo nmap 192.168.1.0/24                    >>> To list all connect device in a local subnet
 telnet
 scp
 nslookup
