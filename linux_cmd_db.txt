@@ -108,6 +108,8 @@ awk
 ping
 netcat
 nc -zv 
+resolvectl status
+nmcli dev show
 resolvectl                    >>>> To see all the interface DNS alone
 nmcli dev show wlp4s0         >>>> To see interface ip,subnetmask,gateway,dns,mac,
 netstat
