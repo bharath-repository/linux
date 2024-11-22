@@ -146,6 +146,19 @@ scp
 nslookup
 
 
+lspci                                        >>>Find out your Linux wireless card chipset information
+sudo lspci <-k|-v|-vv|-vvv>                  ### to see more info 
+lspci -vv -s 04:00.0                        ###particular card id number from above command  && Find out Linux wireless card driver information
+iwconfig                                    >>>How to configure a wireless network interface on Linux
+nmcli connection show
+nmcli dev show
+nmcli connection show "Network"
+iwconfig wlp4s0                              >>>How do I find out wifi link quality on Linux?
+nmcli dev wifi                               *******>>>To find all the wifi network and more info in a place  ***********
+watch -n 1 cat /proc/net/wireless            >>>See link quality continuously on screen
+
+
+
 7]performance
 
 htop
