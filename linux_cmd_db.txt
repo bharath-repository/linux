@@ -155,6 +155,7 @@ nmcli dev show
 nmcli connection show "Network"
 iwconfig wlp4s0                              >>>How do I find out wifi link quality on Linux?
 nmcli dev wifi                               *******>>>To find all the wifi network and more info in a place  ***********
+nmcli dev wlp4s0 connect "zendormitory" bssid 1C:3B:F3:A8:7D:90    >>>>To connect to a particular AP's MAC address **********
 watch -n 1 cat /proc/net/wireless            >>>See link quality continuously on screen
 
 
