@@ -158,6 +158,7 @@ nmcli dev wifi                               *******>>>To find all the wifi netw
 sudo nmcli dev wifi connect "Knight" bssid 9A:C5:21:83:82:16   >>>>To connect to a particular AP's MAC address **********
 sudo iw dev wlp4s0 scan | grep -E 'SSID|signal'                ******>>>>>>To see wifi signal strength in -dbm **************
 sudo iw dev wlp4s0 scan | awk '/SSID:/ {print "SSID: " $0} /signal:/ {print "Signal: " $2 " dBm"}'      ******>>>>>>To see wifi signal strength in -dbm ************** 
+sudo iw dev wlp4s0 scan                                           **************** >>>>>>>>>>>>> To see all hide wifi details ******************
 watch -n 1 cat /proc/net/wireless            >>>See link quality continuously on screen
 
 
