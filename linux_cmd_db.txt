@@ -156,6 +156,8 @@ nmcli connection show "Network"
 iwconfig wlp4s0                              >>>How do I find out wifi link quality on Linux?
 nmcli dev wifi                               *******>>>To find all the wifi network and more info in a place  ***********
 sudo nmcli dev wifi connect "Knight" bssid 9A:C5:21:83:82:16   >>>>To connect to a particular AP's MAC address **********
+sudo iw dev wlp4s0 scan | grep -E 'SSID|signal'                ******>>>>>>To see wifi signal strength in -dbm **************
+sudo iw dev wlp4s0 scan | awk '/SSID:/ {print "SSID: " $0} /signal:/ {print "Signal: " $2 " dBm"}'      ******>>>>>>To see wifi signal strength in -dbm ************** 
 watch -n 1 cat /proc/net/wireless            >>>See link quality continuously on screen
 
 
