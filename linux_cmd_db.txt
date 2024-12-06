@@ -160,7 +160,10 @@ sudo iw dev wlp4s0 scan | grep -E 'SSID|signal'                ******>>>>>>To se
 sudo iw dev wlp4s0 scan | awk '/SSID:/ {print "SSID: " $0} /signal:/ {print "Signal: " $2 " dBm"}'      ******>>>>>>To see wifi signal strength in -dbm ************** 
 sudo iw dev wlp4s0 scan                                           **************** >>>>>>>>>>>>> To see all hide wifi details ******************
 watch -n 1 cat /proc/net/wireless            >>>See link quality continuously on screen
-
+nmcli dev show wlp4s0                  ---------------- To see ipconfig /all interface ip address/gateway/mask/dns
+route -n  or route                     ---------------- To see route print ---- routing table
+iwconfig                               ---------------- To see wireless access point Mac/frequency band/signal strength/signal quality
+nmcli dev wifi list                    ---------------- To see all available wifi signal at a place
 
 
 7]performance
