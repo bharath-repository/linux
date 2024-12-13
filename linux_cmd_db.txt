@@ -543,8 +543,14 @@ hwclock -w								>>>>>	to set system clock to hardware clock
 date
 time
 
+29] Remote desktop login sequence
 
-
+sudo aptitude show xrdp
+sudo systemctl status xrdp
+sudo ufw allow from any to any port 3389 proto tcp
+ip -c a
+**Must logout from ubuntu GUI**
+finally use windows pc to remote desktop connection app to login to ubuntu
 
 
 
