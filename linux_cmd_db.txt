@@ -166,6 +166,11 @@ iwconfig                               ---------------- To see wireless access p
 nmcli dev wifi list                    ---------------- To see all available wifi signal at a place
 
 
+To check IP maximum packet size = from that we can conclude maximum L2 Frame size 
+ping -M do -s 1472 8.8.8.8        *****To test MTU size. -M do (Don't Fragment) -s (Packet Size)*******max frame size (MTU + Ethernet Header (14 bytes) + Trailer (4 bytes) = 1500 + 14 + 4 = 1518 bytes.)
+max ip packet size (Example: If 1472 bytes payload works but 1473 fails, the MTU is 1472 payload + 28 ip header = 1500 bytes max MTU)
+
+
 7]performance
 
 htop
