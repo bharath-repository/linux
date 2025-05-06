@@ -362,6 +362,12 @@ ifstat
 iftop
 cbn
 iperf -s
+| Command                      | Measures                   |
+| ---------------------------- | -------------------------- |
+| `iperf3 -c <server>`         | Upload (client → server)   |
+| `iperf3 -c <server> -R`      | Download (server → client) |
+| `iperf3 -c <server> --bidir` | Both upload and download   |
+ iperf3 -c 89.187.162.1 -R
 iptraf
 wavemon
 bmon
