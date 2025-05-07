@@ -564,5 +564,13 @@ ip -c a
 finally use windows pc to remote desktop connection app to login to ubuntu
 
 
+30] Encryption / Hashing 
+
+sudo apt install hashalot     ---- package will install below hashing commands
+md5sum
+sha256sum test.txt           ----- faster
+sha512sum test.txt          ------ better 
+
+
 
 
