@@ -91,7 +91,8 @@ rmdir
 vi
 gedit
 ln
-ln -s <source_name> <target_name>
+ln -s <source_name> <target_name>      --- to create symbolic link
+readlink -f /usr/sbin/init             --- to find actual hard file from all symbolic links 
 zcat
 cut
 paste
