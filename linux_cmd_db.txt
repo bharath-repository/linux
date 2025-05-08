@@ -572,6 +572,20 @@ md5sum
 sha256sum test.txt           ----- faster
 sha512sum test.txt          ------ better 
 
+31] Compression & Archiving
+
+Compression = gzip & bzip2 & xz
+gzip test.txt
+gunzip test.txt.gz
+file test.txt
+bzip2 test.txt
+bunzip2 test.txt.bz2
+xz test.txt
+unxz test.txt.xz
+Archiving = tar & cpio
+tar-cfz backup.tar.gz test1.txt test2.txt test3.txt
+tar -xfv backup.tar.gz
+tar –list -f backup.tar.gz
 
 
 
