@@ -51,10 +51,12 @@ modinfo
 &&									>>>> AND 
 |									>>>> pipe the output to another command
 &									>>>> to run the command background
->
->>
+>          ---- forward stdout override 
+>>          ---- forward stdout append
 2>
-2>>
+2>>         ---- forward stderr append
+&>
+&>>          ---- forward both stdin, stdout append
 !
 echo $$ or pgrep bash							>>> current running bash ps id
 echo $#
