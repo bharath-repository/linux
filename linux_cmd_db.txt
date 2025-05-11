@@ -338,6 +338,7 @@ pstree
 kill -15 <pid>								>>> terminate the process give some time to save the status
 kill -9 <pid>								>>> force to stop immediate/ usaved process will be lost
 pkill
+killall -15 python
 pgrep
 jobs									>>> list the jobs
 fg <job id>
