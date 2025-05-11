@@ -1,25 +1,26 @@
 Cheatsheet
 
-pane horizantal split
-
+plane horizantal split
 ctrl + b then press '"'
 
-pane vertical split
-
+plane vertical split
 ctrl + b then press '%'
 
+to navigate between windows and planes
+ctrl + b then w
+Ctrl-b c Create new window
 
 Session management
-
 #tmux ls (or tmux list-sessions)
 
-#tmux new -s session-name
+#tmux new -s session-name or tmux
+
 
 Ctrl-b d Detach from session
+#tmux attach -t [session name] or number
+tmux attach -t 0
 
-#tmux attach -t [session name]
-
-#tmux kill-session -t session-name
+#tmux kill-session -t session-name or number
 
 
 
