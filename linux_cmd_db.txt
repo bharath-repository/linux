@@ -97,6 +97,9 @@ ln -s <source_name> <target_name>      --- to create symbolic link
 readlink -f /usr/sbin/init             --- to find actual hard file from all symbolic links 
 zcat
 cut
+cut -d, -f2 test.txt            ----- cut command will do delimiter is , filter the column 2 from the file test.txt
+cut -d, -f2 test.txt | sed -e “s/ //”     ---- pipe the output to sed then execute substitution space with nothing
+cut -d, -f2 test.txt | sed -e “s/ //” | sort | uniq -c | sort -nr
 paste
 split
 clear
@@ -216,6 +219,7 @@ cpufreq-set -r -g powersave
 
 systemctl
 timedatectl
+xclock -update 1
 init
 ldconfig								>>> shared library configuration
 
