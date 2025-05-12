@@ -226,7 +226,7 @@ xclock -update 1
 init
 ldconfig								>>> shared library configuration
 
-10]Remote system & Network device console login
+10]Remote system & Network device console login & putty 
 
 screen
 sudo screen /dev/ttyUSB0              >>>> To connect to a network device using console
