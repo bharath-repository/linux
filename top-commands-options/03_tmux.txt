@@ -7,7 +7,7 @@ plane vertical split
 ctrl + b then press '%'
 
 to navigate between windows and planes
-ctrl-b then w
+ctrl-b then w to list windows
 Ctrl-b then c Create new window
 
 Session management
