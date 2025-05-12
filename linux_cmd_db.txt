@@ -183,6 +183,8 @@ max ip packet size (Example: If 1472 bytes payload works but 1473 fails, the MTU
 
 htop
 top                     —————— ? q M t k
+top , press r – enter the process id , enter the nice value from [-20 to 19]
+
 glancesq
 nmon
 top
