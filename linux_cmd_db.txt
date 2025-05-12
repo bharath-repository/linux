@@ -184,6 +184,9 @@ max ip packet size (Example: If 1472 bytes payload works but 1473 fails, the MTU
 htop
 top                     —————— ? q M t k
 top , press r – enter the process id , enter the nice value from [-20 to 19]
+renice –n 15 7859   —— will change the priority to 15 for process id 7859
+sudo nice –n -10 ls – will get new nice of -10 higher priority with sudo 
+
 
 glancesq
 nmon
