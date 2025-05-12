@@ -12,6 +12,7 @@ date
 id
 man
 watch
+watch free –h         ——————- –n –b –d 
 su
 sudo
 w
