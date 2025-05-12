@@ -17,6 +17,8 @@ sudo
 w
 who
 whoami
+top                     —————— ? q M t k
+htop
 
 
 2]user account related
@@ -334,7 +336,7 @@ ps -aux | grep -iw "root"
 ps -eo pid,ppid,%mem,cmd,%cpu --sort=-%cpu | head -n 10		>>> top 10 cpu using process
 ps -eo pid,ppid,%cpu,cmd,%mem --sort=-%mem | head -n 10		>>> top 10 memory using process
 pstree
-
+pgrep ping | xargs kill   ——— pgrep will provide the process ID and xargs kill will kill all those process id
 kill -15 <pid>								>>> terminate the process give some time to save the status
 kill -9 <pid>								>>> force to stop immediate/ usaved process will be lost
 pkill
