@@ -17,8 +17,6 @@ sudo
 w
 who
 whoami
-top                     —————— ? q M t k
-htop
 
 
 2]user account related
@@ -182,6 +180,7 @@ max ip packet size (Example: If 1472 bytes payload works but 1473 fails, the MTU
 7]performance
 
 htop
+top                     —————— ? q M t k
 glancesq
 nmon
 top
