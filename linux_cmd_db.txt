@@ -17,6 +17,7 @@ sudo
 w
 who
 whoami
+uptime  ----------- -p perrty view
 
 
 2]user account related
