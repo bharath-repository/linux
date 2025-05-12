@@ -231,6 +231,12 @@ ldconfig								>>> shared library configuration
 screen
 sudo screen /dev/ttyUSB0              >>>> To connect to a network device using console
 sudo dmesg | grep -i tty              >>>> To find which com port to connect to
+screen          – to create new session
+ctrl-a , d        – to detach from session
+screen –ls     – to list screen session
+screen –r <session-id>   – to reattach session
+ctrl-a , \          – to kill all session
+
 tmux
 ssh -X                                                          	>>> kind of a gui tools
 ssh -oHostKeyAlgorithms=+ssh-rsa root@192.168.10.1
