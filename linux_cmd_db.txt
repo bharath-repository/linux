@@ -18,6 +18,7 @@ sudo
 w
 who
 whoami
+groups      ------- to see sudo groups
 uptime  ----------- -p perrty view
 
 
