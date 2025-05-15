@@ -38,7 +38,7 @@ chmod
 chown
 getfacl
 setfacl
-umask
+umask                   ----  to set default file permission for new file which created in future
 
 3]kernel commands
 
