@@ -117,10 +117,17 @@ awk
 ping
 netcat
 nc -zv 
+
 resolvectl status
-nmcli dev show
 resolvectl                    >>>> To see all the interface DNS alone
+
+nmcli
+nmcli dev show
 nmcli dev show wlp4s0         >>>> To see interface ip,subnetmask,gateway,dns,mac,
+nmcli con show Knight | grep -i ip4  —————————-Equivalent to ipconfig /all in windows
+nmcli dev show wlp4s0
+nmtui
+
 netstat
 netstat -tulnp								>>> show that tcp/udp/listening/port/process >>> simply list listening ports
 vnstat -l 1								>>> live bandwidth monitoring
@@ -132,8 +139,7 @@ dnsenume
 host
 strace
 ss -tuao                         					>>> list all tcp/udp sockets, "o" for timer 
-nmcli
-nmtui
+
 ip
 ip a add 192.168.1.XXX/24 dev eth0
 route
@@ -234,9 +240,12 @@ ldconfig								>>> shared library configuration
 
 10]Remote system & Network device console login & putty 
 
-screen
-sudo screen /dev/ttyUSB0              >>>> To connect to a network device using console
+
 sudo dmesg | grep -i tty              >>>> To find which com port to connect to
+sudo screen /dev/ttyUSB0              >>>> To connect to a network device using console
+minicom –s                            >>>> To network device like putty
+
+screen
 screen          – to create new session
 ctrl-a , d        – to detach from session
 screen –ls     – to list screen session
@@ -329,6 +338,8 @@ journalctl -k                         		        	>>> for kernel buffer message
 journalctl -f 								>>> to fellow current logs
 journalctl -r								>>> show in reverse
 journalctl -e 								>>> go to end of the page 
+journalctl -S today   >>> to see today's log alone
+journalctl -xe        >>> to see most recent log
 
 
 15]backups and zip
