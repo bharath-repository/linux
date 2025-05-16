@@ -306,7 +306,7 @@ vgdisplay
 lvdisplay
 
 
-13]hardware info
+13]hardware / battery info
 
 iostat -dx 5								>>> option "d/x/5"  display/extended statistics/5 secound refresh rate
 lspci
@@ -317,6 +317,7 @@ lsusb
 lslogins
 lscpu
 sensors
+acpi -b             ---- to see battery remaining 
 
 14]system log 
 
