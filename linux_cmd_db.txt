@@ -621,5 +621,38 @@ tar-cfz backup.tar.gz test1.txt test2.txt test3.txt
 tar -xfv backup.tar.gz
 tar –list -f backup.tar.gz
 
+32] Systemd 
+systemctl status application.service                                                  ----- to see status 
+systemctl show sshd.service
+sudo systemctl start application.service                                              ----- to start
+sudo systemctl stop application.service                                               ----- to stop
+sudo systemctl restart application.service                                            ----- to restart
+sudo systemctl reload application.service                                             ----- to reload or append the new config
+sudo systemctl reload-or-restart application.service                                  ------
+sudo systemctl daemon-reload                                                          ------ 
+
+sudo systemctl enable application.service
+sudo systemctl disable application.service
+
+
+systemctl list-units
+systemctl list-unit-files
+systemctl list-units --all
+systemctl list-units --all --state=inactive
+systemctl list-units --type=service
+
+systemctl cat atd.service                                                             ---- to see service config
+systemctl list-dependencies sshd.service                                              ---- to see service dependencies
+
+sudo systemctl mask nginx.service                                                     ---- to block a service 
+sudo systemctl unmask nginx.service
+
+systemctl get-default                                                                 ---- to get default runlevel
+sudo systemctl set-default graphical.target                                           ---- to 
+
+
+
+
+
 
 
