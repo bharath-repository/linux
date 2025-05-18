@@ -598,25 +598,14 @@ vscode
 pycharm
 virtualbox
 
-
-
 grive-tools			>>> google drive & linux local directory synchronization software
-
 steam				>>> gaming software
-
 joplin				>>> educational notes taking sofrware
-
 GIMP				>>> software for photo editing
-
 nitroshare 			>>> file sharing between all type of device eg: mobile
-
 synaptic   			>>> graphical package manager
-
 stacer				<<<<<  Stacer : https://github.com/oguzhaninan/Stacer >>  Linux System Optimizer & Monitoring.
-
 timeshift 	 		<<<<<  snapshot & backup restoration of you entire system >> https://www.youtube.com/watch?v=ShW7N...
-
-
 
 27] Time and date
 
@@ -663,6 +652,7 @@ tar -xfv backup.tar.gz
 tar –list -f backup.tar.gz
 
 32] Systemd 
+
 systemctl status application.service                                                  ----- to see status 
 systemctl show sshd.service
 sudo systemctl start application.service                                              ----- to start
@@ -674,7 +664,6 @@ sudo systemctl daemon-reload                                                    
 
 sudo systemctl enable application.service
 sudo systemctl disable application.service
-
 
 systemctl list-units
 systemctl list-unit-files
@@ -697,6 +686,10 @@ sudo systemctl poweroff
 sudo systemctl reboot
 sudo reboot
 
+33] Shell
+bash, zsh, dash, ksh, csh
+echo $BASH
+echo $SHELL
 
 
 
