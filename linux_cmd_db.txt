@@ -288,6 +288,9 @@ e2label /dev/sdb ""							>>  to remove label pass empty string as an argument
 mkswap
 swapon -all
 swapoff
+zramctl      --  zram is a kernel module that allows you to create a compressed block device in RAM. This can be used as swap or as a temporary filesyste
+
+free -h
 fdisk
 gdisk
 mount
