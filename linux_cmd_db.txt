@@ -355,7 +355,7 @@ ps
 ps -aux
 ps -ef
 ps -aux --forest | grep brave						>>> to see process in tree view
-ps -aux | grep -Evwi "root|Knight"					>>> E-multiple string, v-invert search, i-case insensitive
+ps -aux | grep -Evwi "root|Knight"					>>> E-multiple string, v-invert search,w-to match whole words only, i-case insensitive
 ps -aux | grep -iw "knight"
 ps -aux | grep -iw "root"
 ps -eo pid,ppid,%mem,cmd,%cpu --sort=-%cpu | head -n 10		>>> top 10 cpu using process
