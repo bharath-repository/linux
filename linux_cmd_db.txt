@@ -445,29 +445,24 @@ crontab -u knight -e
 
 21]install package management
 
+Debian/Ubuntu
 apt
 apt-get
 aptitude
 apt-cache show <command_name or package_name>				>>> show package deteails and dependencies 
 aptitude show <command_name or package_name>
-
-
 apt list --installed | grep -i "\[installed\]"			>>> list installed packages
 apt list --installed | grep -i "automatic"       			>>> list automatic/dependency package 
 apt list --upgradeable							>>> all upgradeable packages
 apt list depends <package_name>
-
 apt-cache show <package-name>
 apt info <package-name>
 apt-cache search <package-name>
-
 apt remove <package-name> 						>>> removes package binary files alone
 apt purge <package-name>						>>> remove configuration/binary 
 apt autoremove <package-name>						>>> delete dependency of that package-name
 
 snap
-
-
 dpkg
 dpkg -l								>>> list all installed packages
 dpkg -i --force <name.deb>						>>> install without dependency
@@ -476,11 +471,54 @@ dpkg -I <name.deb>							>>> info about the name.deb
 dpkg -L <name.deb>							>>> list installed package and it's contents
 dpkg-reconfigure <package_name>
 
-
-
+RedHat/Centos/Fedora
 yum
-rpm
+/etc/yum.conf  - /etc/yum.repos.d/
+yum update
+yum upgrade -y
+yum info emacs
+yum provides /bin/bash
+yum localinstall
+yum groupinstall
+yum check-update
+yum deplist tmux         -----     dependency list 
+yum history                     -------   show you installed packages
+yum upgrade ‘cal*’        ------- upgrade all under cal 
+yumdowndloader –resolve bzr  ---------------- to download rpm package
 
+rpm ---- options below
+-i  ----to install
+-e  ----to remove
+-U  ----to upgrade
+-q  ----to query
+-F  ----only update if its already installed
+-V  ----check the integritity of the installation
+-K  ----check the integritity of the rpm package 
+
+Fedora
+sudo dnf update                  ---- Update system	
+sudo dnf upgrade <package>       ---- Upgrade a package	
+sudo dnf install <package>       ---- Install a package	
+sudo dnf remove <package>        ---- Remove a package	
+dnf search <keyword>             ---- Search for a package	
+dnf info <package>               ---- Get info about a package	
+dnf list installed               ---- List installed packages	
+dnf list available               ---- List available packages	
+sudo dnf clean all               ---- Clean cache	
+sudo dnf repolist                ---- Manage repositories	
+dnf check-update                 ---- Check for updates	
+sudo dnf downgrade <package>     ---- Downgrade a package	
+sudo dnf history                 ---- History of transactions	
+sudo dnf history rollback <ID>   ---- Rollback to previous state
+sudo dnf config-manager --set-enabled <repo>       ------ Enable a repository	
+sudo dnf config-manager --set-disabled <repo>      ------ Disable a repository	
+
+Suse OS
+zypper 
+man zypper 
+zypper se tmux  ----------------- search for tmux 
+
+Windows
 wine
 
 22]devlopment tools
