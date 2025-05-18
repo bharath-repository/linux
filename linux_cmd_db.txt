@@ -648,7 +648,14 @@ sudo systemctl mask nginx.service                                               
 sudo systemctl unmask nginx.service
 
 systemctl get-default                                                                 ---- to get default runlevel
-sudo systemctl set-default graphical.target                                           ---- to 
+sudo systemctl set-default graphical.target                                           ---- to set default runlevel
+
+sudo systemctl rescue
+sudo systemctl halt
+sudo systemctl poweroff
+sudo systemctl reboot
+sudo reboot
+
 
 
 
