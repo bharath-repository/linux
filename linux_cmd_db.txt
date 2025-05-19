@@ -71,6 +71,7 @@ echo $#
 find
 find . -daystart -maxdepth 3 -iname "*.md"
 tee
+ls | tee file.txt
 history
 lsof
 locate
