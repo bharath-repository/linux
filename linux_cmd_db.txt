@@ -82,7 +82,12 @@ comm
 stat <file_name>
 type
 which
+nl
 sort
+uniq
+paste
+tr
+sed
 wc
 less
 more
