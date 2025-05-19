@@ -301,7 +301,12 @@ gdisk
 mount
 umount
 partprobe
-dd
+dd                                                    >> Doing backup
+dd if=/dev/zero of=/tmp/text count=1024 bs=1024 
+dd if=/dev/sda of=/tmp/backup.dd bs=4096              >> Backup hard drive space and save it in backup.dd
+dd if=/tmp/backup.dd  if=/dev/sda  bs=4096            >> To restore the backup
+dd if=ubuntu.iso of=/dev/sdc bs=2048                  >> To make bootable USB
+
 df
 sudo df -h | grep nvm                     >>>  To view hard disk space utilized
 du
