@@ -192,6 +192,43 @@ ping -M do -s 1472 8.8.8.8        *****To test MTU size. -M do (Don't Fragment) 
 max ip packet size (Example: If 1472 bytes payload works but 1473 fails, the MTU is 1472 payload + 28 ip header = 1500 bytes max MTU)
 
 
+
+tcpdump                                               >>>> packet sniffing and analysis tools
+tshark
+ngrep
+netstat                                                >>>network stack querying tools
+ss
+tracepath                                              >>>> routing path dicovery tools
+mtr
+traceroute
+bmon                                                   >>>>network interface bandwidth usage monitoring tools
+vnstat
+cbm
+slurm
+nload
+sar
+iperf                                                 >>> bidirectional bandwidth estimation tools
+netperf
+speedtest-cli
+ping                                                   >>>network delay measurement & query tools
+nping
+hping
+tcpping
+iftop                                                  >>>> flow level bandwidth monitoring tools
+iptraf
+tcptrack
+dig                                                    >>> dns server querying tools
+nslookup
+ethtool                                                 >>>> nic config & query tools
+ip                                                      >>> network config tools
+ifconfig
+lsof                                                    >>> layer 4 port usage monitor
+sudo lsof -i -nP
+nethogs                                                 >>>process level bandwidth usage monitoring tools
+bandwhich
+
+
+
 7]performance
 
 htop
