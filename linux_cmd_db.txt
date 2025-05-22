@@ -566,6 +566,9 @@ zypper
 man zypper 
 zypper se tmux  ----------------- search for tmux 
 
+Arch Linux
+sudo pacman -S pciutils
+
 Windows
 wine
 
