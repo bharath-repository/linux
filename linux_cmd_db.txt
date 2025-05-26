@@ -591,20 +591,6 @@ git
 grive
 grive-tools
 
-echo $SHELL
-echo $HOSTNAME
-echo $USER
-echo $TERM
-echo $PATH
-echo $$
-echo $#
-env
-bash
-unset
-set
-exports
-
-
 23]grub, bios, uefi
 
 grub-install
@@ -737,10 +723,40 @@ sudo systemctl poweroff
 sudo systemctl reboot
 sudo reboot
 
-33] Shell
+33] Shell scripting / Bash scripting
 bash, zsh, dash, ksh, csh
 echo $BASH
 echo $SHELL
+echo $SHELL
+echo $HOSTNAME
+echo $USER
+echo $TERM
+echo $PATH
+echo $$
+echo $#
+;           >>> run the first command and run the second command it is a separator 
+||          >>> logical or function
+&&          >>> logical and function
+
+
+bash
+unset
+set
+exports
+exec ping 8.8.8.8                      >>>>>>>>> this command will close the shell automatically after the ping completed 
+
+-----------------------------------------------------------------------------------
+#!/bin/bash or #!/bin/sh or #!/usr/bin/python3
+#!/bin/bash
+echo “starting of code”
+cd /tmp
+touch $(date +%Y-%m-%d-%H%d)-$1                     ####this line willl create the file name with date and time of the file creation 
+touch $2
+ls -lrth
+echo “ending of code”
+######Here the $1 represents first parameter which is give when the code is execute 
+knight@knight:/tmp$ ./test99.sh newfile1.txt newfile2.txt
+-----------------------------------------------------------------------------------------
 
 
 
