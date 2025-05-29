@@ -729,6 +729,7 @@ sudo reboot
 stdin     --------   stream 0
 stdout     --------   stream 1
 stderr      --------   stream 2
+echo $0                          >>>> to confirm the shell status / to check what shell is in use login/interactive 
 echo $?                >>>> always display return value of the previous command === if the command executed successfully it will give 0 === if the command executed with error it will return 1 
 
 bash, zsh, dash, ksh, csh
