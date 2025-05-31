@@ -348,7 +348,7 @@ dd if=ubuntu.iso of=/dev/sdc bs=2048                  >> To make bootable USB
 df
 sudo df -h | grep nvm                     >>>  To view hard disk space utilized
 du
-sudo du -h -d 1 | sort -hr                >>> To list child directory size 
+sudo du -h -d 1 | sort -hr                >>> To list child directory size / sort by max file size
 
 
 pvs
@@ -667,6 +667,10 @@ ip -c a
 **Must logout from ubuntu GUI**
 finally use windows pc to remote desktop connection app to login to ubuntu
 
+Disable Suspend on Lid Close (CLI)
+sudo nano /etc/systemd/logind.conf > HandleLidSwitch=ignore > laptop/battery will run when we close the lid
+sudo nano /etc/systemd/logind.conf > HandleLidSwitchExternalPower=ignore > laptop/charging will run when we close the lid
+sudo nano /etc/systemd/logind.conf > HandleLidSwitch=suspend > laptop will sleep when we close the lid
 
 30] Encryption / Hashing 
 
