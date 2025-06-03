@@ -671,6 +671,7 @@ Disable Suspend on Lid Close (CLI)
 sudo nano /etc/systemd/logind.conf > HandleLidSwitch=ignore > laptop/battery will run when we close the lid
 sudo nano /etc/systemd/logind.conf > HandleLidSwitchExternalPower=ignore > laptop/charging will run when we close the lid
 sudo nano /etc/systemd/logind.conf > HandleLidSwitch=suspend > laptop will sleep when we close the lid
+sudo systemctl reload-or-restart systemd-logind
 
 30] Encryption / Hashing 
 
