@@ -488,8 +488,12 @@ write user <tty>
 20]scheduling jobs
 
 at
-atq
-atrm
+atq                                              ----- to see the job queue 
+atrm                                             ----- to delete the job from the queue
+
+at now + 5 min                                   ------ will run the below command in 5mins
+>ping 8.8.8.8 -c 5 > /tmp/testping.txt           ------ do ping and send output to /tmp
+ctrl +d                                          ------ exist from the editor
 
 crontab
 crontab -l
