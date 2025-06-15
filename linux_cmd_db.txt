@@ -409,7 +409,7 @@ journalctl -e 							                           	>>> go to end of the page
 journalctl -S today                              >>> to see today's log alone
 journalctl -xe                                   >>> to see most recent log
 journalctl -u plocate-updatedb.service -n 50     >>> last time service running log
-journalctl -u sshd                               >>> to see only ssh related entry
+journalctl -u ssh -b 0                           >>> to see only ssh related entry for current boot session
 journalctl -p err                                >>> to see error messages from log
 journalctl status                                >>> to see status tree of process
 journalctl --failed                              >>> to only see all failed process 
