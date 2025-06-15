@@ -407,6 +407,8 @@ journalctl -f 						                           		>>> to fellow current logs
 journalctl -r						                            		>>> show in reverse
 journalctl -e 							                           	>>> go to end of the page 
 journalctl -S today                              >>> to see today's log alone
+journalctl --since "-10 minutes" --until "-5 minutes"   >>>> show you log between last 10mins to last 5mins
+journalctl --since "10 minutes ago"              >>> show you last 10mins of log
 journalctl -xe                                   >>> to see most recent log
 journalctl -u plocate-updatedb.service -n 50     >>> last time service running log
 journalctl -u ssh -b 0                           >>> to see only ssh related entry for current boot session
