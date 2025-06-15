@@ -410,6 +410,8 @@ journalctl -S today                              >>> to see today's log alone
 journalctl -xe                                   >>> to see most recent log
 journalctl -u plocate-updatedb.service -n 50     >>> last time service running log
 journalctl -p err                                >>> to see error messages from log
+journalctl status                                >>> to see status tree of process
+journalctl --failed                              >>> to only see all failed process 
 
 
 ping 8.8.8.8 -c 5 > ping-$(date +'%Y-%m-%d-%H%-%M').txt                  >>>> create the log file name with current date/time 
