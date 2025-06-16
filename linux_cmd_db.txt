@@ -252,7 +252,7 @@ free -h								>>> h human readable format
 free -h -s 2 -c 5						>>> s/c ===> 2 sec refresh rate, generate only 5 reports
 vmstat
 
-mpstat -P ALL 3							>>> 3 refresh rate all logical core details
+mpstat -P ALL 3							>>> 3 refresh rate all ical core details
 mpstat <refresh-rate> <how-many report>
 mpstat 3 10								>>> here 3 sec refresh rate 10 time report will be generate
 mpstat 5								>>> generate report every 5 sec contineously 
@@ -286,7 +286,7 @@ xclock -update 1
 init
 ldconfig								>>> shared library configuration
 
-10]Remote system & Network device console login & putty 
+10]Remote system & Network device console in & putty 
 
 
 sudo dmesg | grep -i tty              >>>> To find which com port to connect to
@@ -379,12 +379,12 @@ lshw
 lsblk
 blkid
 lsusb
-lslogins
+lsins
 lscpu
 sensors
 acpi -b             ---- to see battery remaining 
 
-14]system log 
+14]system log
 
 Log severity / Facility 
 1.	Emergency / Panic
@@ -416,6 +416,7 @@ journalctl -p err                                >>> to see error messages from 
 journalctl status                                >>> to see status tree of process
 journalctl --failed                              >>> to only see all failed process 
 
+logger hi there                                  >>> log this message into system log we can see @ (journactl -n 50)
 
 ping 8.8.8.8 -c 5 > ping-$(date +'%Y-%m-%d-%H%-%M').txt                  >>>> create the log file name with current date/time 
 
