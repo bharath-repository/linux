@@ -131,6 +131,10 @@ nc -zv
 resolvectl status
 resolvectl                    >>>> To see all the interface DNS alone
 
+sudo ifconfig wlp4s0 down    >>>> to bring down a interface
+sudo ifconfig wlp4s0 up      >>>> to bring up a interface
+
+
 nmcli
 nmcli dev show
 nmcli dev show wlp4s0         >>>> To see interface ip,subnetmask,gateway,dns,mac,
