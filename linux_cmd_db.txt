@@ -149,9 +149,9 @@ netstat -nr           >>> show kernel routing
 ss -tulpn             >>> to list listening ports
 ss -tuao              >>> list all tcp/udp sockets, "o" for timer 
 
-To find connectivity between two system in a same network
-nc -l 1337            >>> Listen to this port  >>>> this system admin system > 192.168.0.78
-nc 192.168.0.78 1337  >>> sending cli text to admin computer > 
+To find layer 4 connectivity between two system in a same network
+nc -l 1337            >>> Listen to this port 1337 >>>> this is system admin PC > 192.168.0.78
+nc 192.168.0.78 1337  >>> sending cli text to admin PC from customer's PC > Crtl + c to exit from the screen
 
 vnstat -l 1								>>> live bandwidth monitoring
 tcpdump
