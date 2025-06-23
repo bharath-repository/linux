@@ -144,6 +144,15 @@ nmtui
 
 netstat
 netstat -tulnp								>>> show that tcp/udp/listening/port/process >>> simply list listening ports
+netstat -na           >>> show active connection 
+netstat -nr           >>> show kernel routing
+ss -tulpn             >>> to list listening ports
+ss -tuao              >>> list all tcp/udp sockets, "o" for timer 
+
+To find connectivity between two system in a same network
+nc -l 1337            >>> Listen to this port  >>>> this system admin system > 192.168.0.78
+nc 192.168.0.78 1337  >>> sending cli text to admin computer > 
+
 vnstat -l 1								>>> live bandwidth monitoring
 tcpdump
 traceroute        					             	>>> "-r" for routing table
@@ -152,7 +161,7 @@ dig
 dnsenume
 host
 strace
-ss -tuao                         					>>> list all tcp/udp sockets, "o" for timer 
+
 
 ip
 ip a add 192.168.1.XXX/24 dev eth0
