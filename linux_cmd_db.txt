@@ -154,10 +154,14 @@ nc -l 1337            >>> Listen to this port 1337 >>>> this is system admin PC 
 nc 192.168.0.78 1337  >>> sending cli text to admin PC from customer's PC > Crtl + c to exit from the screen
 
 vnstat -l 1								>>> live bandwidth monitoring
-tcpdump
 traceroute        					             	>>> "-r" for routing table
 nmap
-dig
+
+tcpdump
+tcpflow
+sudo tcpflow -c port 80    >>>>> Output to console > monitor port 80 only > if no port will monitor all traffic 
+dig google.com
+
 dnsenume
 host
 strace
