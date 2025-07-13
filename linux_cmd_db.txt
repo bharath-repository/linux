@@ -199,13 +199,16 @@ iwconfig wlp4s0                              >>>How do I find out wifi link qual
 nmcli dev wifi                               *******>>>To find all the wifi network and more info in a place  ***********
 sudo nmcli dev wifi connect "Knight" bssid 9A:C5:21:83:82:16   >>>>To connect to a particular AP's MAC address **********
 sudo iw dev wlp4s0 scan | grep -E 'SSID|signal'                ******>>>>>>To see wifi signal strength in -dbm **************
-sudo iw dev wlp4s0 scan | awk '/SSID:/ {print "SSID: " $0} /signal:/ {print "Signal: " $2 " dBm"}'      ******>>>>>>To see wifi signal strength in -dbm ************** 
-sudo iw dev wlp4s0 scan                                           **************** >>>>>>>>>>>>> To see all hide wifi details ******************
+sudo iw dev wlp4s0 scan | awk '/SSID:/ {print "SSID: " $0} /signal:/ {print "Signal: " $2 " dBm"}'      ******>>>>>>To see wifi signal strength in -dbm ****
+sudo iw dev wlp4s0 scan                                           *** >>>>>>>>>>>>> To see all hide wifi details ***
 watch -n 1 cat /proc/net/wireless            >>>See link quality continuously on screen
 nmcli dev show wlp4s0                  ---------------- To see ipconfig /all interface ip address/gateway/mask/dns
 route -n  or route                     ---------------- To see route print ---- routing table
 iwconfig                               ---------------- To see wireless access point Mac/frequency band/signal strength/signal quality
 nmcli dev wifi list                    ---------------- To see all available wifi signal at a place
+nmcli device wifi connect Hypnotoad password MyPassword
+nmcli device wifi connect Hypnotoad password MyPassword hidden yes       ----- to connect to hidden wifi from terminal ------
+nmcli device wifi connect Hypnotoad password MyPassword ifname wlp4s0    ----- to connect to wifi from terminal-------
 
 
 To check IP maximum packet size = from that we can conclude maximum L2 Frame size 
