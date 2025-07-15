@@ -20,10 +20,10 @@ who
 whoami
 groups                          ------- to see sudo groups
 uptime                          ----- -p perrty view
-iconv –l                        ————- list of computer’s know languages 
+iconv –l                        ————- list of computer’s know language
 
 
-2]user account related
+2]user account related / Admin task
 
 finger <username>							>>> get info about user
 useradd -m -s /bin/bash -G sudo knight              			>>> creating sudo account(user)
@@ -40,6 +40,10 @@ chown
 getfacl
 setfacl
 umask                   ----  to set default file permission for new file which created in future
+last                    ---- to see all login even logs
+lastb                   --- to see most recent boot info
+passwd –-ulock, –-lock, —expire
+
 
 3]kernel commands
 
@@ -73,6 +77,8 @@ find
 find . -daystart -maxdepth 3 -iname "*.md"
 find . -iname "*timer"
 locate timer
+getent passwd knight
+getent group knight              >>> to find the word in a file > shows us the whole file
 tee
 ls | tee file.txt
 history
@@ -124,6 +130,38 @@ awk
 
 6]networking
 
+ping –a 8.8.8.8    >>>>> system will give us audio notification
+ping –A 8.8.8.8    >>>> auto adjust ping rate per second —- stress test
+ping –s 1450 8.8.8.8  >>>> to change sending payload size 
+ping –f 8.8.8.8          >>>>> flood ping  
+ping –i 3 8.8.8.8        >>>> send ping every 3 sec once 
+ping –n 8.8.8.8          >>>> to avoid dns resolution 
+
+traceroute –n 8.8.8.8   >>>> to trace without dns resolution 
+
+sudo ip route add default via 10.2.64.1 dev wlp4s0 metric 90             >>>> to add default static route
+sudo ip route add default via 10.2.64.1
+
+sudo ip route del default via 192.168.0.1
+
+netstat –na                >>> show active connection
+netstat –nr                  >>> shows routing info
+
+
+ss –tulpn              >>> 
+netstat -na           >>> show active connection 
+netstat -nr           >>> show kernel routing
+ss -tulpn             >>> to list listening ports
+ss -tuao              >>> list all tcp/udp sockets, "o" for timer 
+
+To find layer 4 connectivity between two system in a same network
+nc -l 1337            >>> Listen to this port 1337 >>>> this is system admin PC > 192.168.0.78
+nc 192.168.0.78 1337  >>> sending cli text to admin PC from customer's PC > Crtl + c to exit from the screen
+tcpdump
+tcpflow
+sudo tcpflow -c port 80    >>>>> Output to console > monitor port 80 only > if no port will monitor all traffic 
+dig google.com
+
 ping
 netcat
 nc -zv 
@@ -164,6 +202,12 @@ dig google.com
 
 dnsenume
 host
+host facebook.com
+host –t AAAA facebook.com
+A – Record meant for Ipv4 DNS server 
+AAAA – Record meant for Ipv6 DNS server 
+MX – Record meant for Mail DNS server 
+
 strace
 
 
@@ -335,6 +379,41 @@ iptables
 iptables -S 								>>> to list all rules in the firewall
 
 sestatus
+fuser
+ulimit
+chage
+passwd –-ulock, –-lock, —expire
+find . –perm –u+s             >>> find file in current directory with file permission setuid and other permission
+find . –perm u+s               >>> find file in current directory with file permission only setuid 
+find / -perm -u+s -exec ls -l {} \;        >>> to execute output of a file into another command
+sudo lsof -i              >>>>> list open files with related with internet connections
+sudo fuser 22/tcp -v      >>>>> to see who is using this file with verbose 
+
+
+ssh-keygen –R 192.168.70.2             >>> will remove ssh known host public key
+ssh-keygen                                         >>> will create ssh key
+
+ssh -L 9000:hckrnews.com:80 root@5.161.197.79
+Remote Forwarding 
+ssh -R 8000:localhost:80 root@5.161.197.79
+ssh -R 0.0.0.0:8000:localhost:7777 192.168.70.2
+
+gpg --gen-key
+gpg --list-keys
+gpg --export knight > knight.pub.key
+gpg --export -a knight > knight.pub.key.asc      >>> to create the key in ascii format 
+
+gpg --import knight.pub.key
+vim letter.txt
+gpg --output letter.txt.signed -a --sign letter.txt
+gpg --output letter.txt.signed --clearsign letter.txt
+gpg --verify letter.txt.signed
+
+gpg --output myletter --verify letter.txt.signed
+
+gpg --- key revoke
+gpg-agent
+
 
 12]filesystem, harddisk, mount points
 
@@ -404,7 +483,7 @@ lscpu
 sensors
 acpi -b             ---- to see battery remaining 
 
-14]system log
+14]system log -logging
 
 Log severity / Facility 
 1.	Emergency / Panic
@@ -436,7 +515,7 @@ journalctl -p err                                >>> to see error messages from 
 journalctl status                                >>> to see status tree of process
 journalctl --failed                              >>> to only see all failed process 
 
-logger hi there                                  >>> log this message into system log we can see @ (journactl -n 50)
+logger hi there                             >>> log this message into system log we can see @ (journactl -n 50)
 
 ping 8.8.8.8 -c 5 > ping-$(date +'%Y-%m-%d-%H%-%M').txt                  >>>> create the log file name with current date/time 
 nmcli dev show wlp4s0 > /tmp/ping-$(date +'%Y-%m-%d-%H-%M-%S').txt       >>>> create a file in tmp directory and save the text resutls inside 
