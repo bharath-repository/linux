@@ -84,6 +84,7 @@ ls | tee file.txt
 history
 lsof
 locate
+updatedb
 whichis
 echo
 file
@@ -431,6 +432,9 @@ mkfs.vfat -F 32 /dev/sdb						>>> FAT32 >> default compatible with all devices
 
 e2label /dev/sdb knight						>>  to set label
 e2label /dev/sdb ""							>>  to remove label pass empty string as an argument
+
+tune2fs                 >>> used to do filesystem check
+mount --bind            >>> used to mount one file in two directory
 
 mkswap
 swapon -all
@@ -897,7 +901,7 @@ echo $#
 ||          >>> logical or function
 &&          >>> logical and function
 
-
+nohup       >>> used to dettach a proces from who created it >>> even the user close the shell or logout also the proces will run continuously 
 bash
 unset
 set
