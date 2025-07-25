@@ -21,6 +21,7 @@ whoami
 groups                          ------- to see sudo groups
 uptime                          ----- -p perrty view
 iconv –l                        ————- list of computer’s know language
+sudo dmidecode      >>> System Management BIOS >>>> show the bios details
 
 
 2]user account related / Admin task
@@ -476,6 +477,7 @@ lvdisplay
 
 13]hardware / battery info
 
+sudo dmidecode      >>> System Management BIOS >>>> show the bios details 
 iostat -dx 5								>>> option "d/x/5"  display/extended statistics/5 secound refresh rate
 lspci
 lshw
