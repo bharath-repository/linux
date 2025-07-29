@@ -22,6 +22,7 @@ groups                          ------- to see sudo groups
 uptime                          ----- -p perrty view
 iconv –l                        ————- list of computer’s know language
 sudo dmidecode      >>> System Management BIOS >>>> show the bios details
+inxi                >>> to see systeminfo >> Highly useful
 
 
 2]user account related / Admin task
