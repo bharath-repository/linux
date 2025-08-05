@@ -92,7 +92,7 @@ echo
 file
 diff
 comm
-stat <file_name>
+stat <file_name>      ------- To see file access, modified, change time and more
 type
 which
 nl
