@@ -524,9 +524,11 @@ journalctl --failed                              >>> to only see all failed proc
 
 logger hi there                             >>> log this message into system log we can see @ (journactl -n 50)
 
-ping 8.8.8.8 -c 5 > ping-$(date +'%Y-%m-%d-%H%-%M').txt                  >>>> create the log file name with current date/time 
+ping 8.8.8.8 -c 5 > ping-$(date +'%Y-%m-%d-%H%-%M').txt                  >>>> create the log filename with current date/time 
 nmcli dev show wlp4s0 > /tmp/ping-$(date +'%Y-%m-%d-%H-%M-%S').txt       >>>> create a file in tmp directory and save the text resutls inside 
 
+mydate="$(date)"                                            
+echo $mydate
 
 
 15]backups and zip
