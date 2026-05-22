@@ -171,6 +171,7 @@ nc -zv
 
 resolvectl status
 resolvectl                    >>>> To see all the interface DNS alone
+sudo tcpdump -ni any port 53  >>>> To find which resolver our laptop contacting 
 
 sudo ifconfig wlp4s0 down    >>>> to bring down a interface
 sudo ifconfig wlp4s0 up      >>>> to bring up a interface
